@@ -22,7 +22,7 @@ public class MenuStartScript : MonoBehaviour {
 
 	void OnGUI()
 	{
-		int buttonWidth = 120;
+		int buttonWidth = 150;
 		int buttonHeight = 60;
 		
 		// Determine the button's place on screen
@@ -32,7 +32,7 @@ public class MenuStartScript : MonoBehaviour {
 			// Center in X, 1/3 of the height in Y
 			new Rect (
 			Screen.width / 2 - (buttonWidth / 2),
-			(1 * Screen.height / 3) - (buttonHeight / 2),
+			(5 * Screen.height / 15) - (buttonHeight / 2),
 			buttonWidth,
 			buttonHeight
 			),

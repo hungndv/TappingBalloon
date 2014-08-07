@@ -66,11 +66,6 @@ public class BalloonScript : MonoBehaviour
 		// End of the update method
 	}
 
-	void FixedUpdate ()
-	{
-
-	}
-
 	void OnCollisionEnter2D (Collision2D info)
 	{
 		SoundEffectsHelper.Instance.MakeExplosionSound ();
@@ -80,7 +75,8 @@ public class BalloonScript : MonoBehaviour
 		Destroy (gameObject, 0.5f);
 
 		ScoreScript.isDead = true;
-		GameObject.FindGameObjectWithTag ("GameController").AddComponent<OverScript> ();
+		GameObject.FindGameObjectWithTag ("GameController").AddComponent<GameOverScript> ();
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GoogleMobileAdsUnityPluginScript> ().bannerView.Show();
 	}
 
 	private void DoSomething ()

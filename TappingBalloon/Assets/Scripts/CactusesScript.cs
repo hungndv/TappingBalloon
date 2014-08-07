@@ -24,6 +24,10 @@ public class CactusesScript : MonoBehaviour
 			var balloon = GameObject.FindGameObjectWithTag("Player");
 			if (transform.position.x + renderer.bounds.size.x < balloon.transform.position.x) {
 				ScoreScript.score++;
+				if (ScoreScript.score > ScoreScript.HighScore)
+				{
+					ScoreScript.HighScore = ScoreScript.score;
+				}
 				isCalculated = true;
 				SoundEffectsHelper.Instance.MakeScoreSound();
 			}

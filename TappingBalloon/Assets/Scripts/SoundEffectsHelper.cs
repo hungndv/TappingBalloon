@@ -34,7 +34,7 @@ public class SoundEffectsHelper : MonoBehaviour
 	{
 		MakeSound (scoreSound);
 	}
-	
+
 	/// <summary>
 	/// Play a given sound
 	/// </summary>

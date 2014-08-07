@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{82CF7016-49CC-4E86-F80A-9D570BECEE0A}"
+# Visual Studio 2008
+
+Project("{74B86DBF-F2E2-5F1C-C052-0641CC9EF45A}") = "TappingBalloon", "Assembly-CSharp.csproj", "{415BB540-E77D-7B2A-E325-D561E74435D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{82CF7016-49CC-4E86-F80A-9D570BECEE0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82CF7016-49CC-4E86-F80A-9D570BECEE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82CF7016-49CC-4E86-F80A-9D570BECEE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82CF7016-49CC-4E86-F80A-9D570BECEE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415BB540-E77D-7B2A-E325-D561E74435D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415BB540-E77D-7B2A-E325-D561E74435D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415BB540-E77D-7B2A-E325-D561E74435D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415BB540-E77D-7B2A-E325-D561E74435D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -39,7 +42,5 @@ Global
 		$4.DirectoryNamespaceAssociation = None
 		$4.ResourceNamePolicy = FileFormatDefault
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
+
 EndGlobal
