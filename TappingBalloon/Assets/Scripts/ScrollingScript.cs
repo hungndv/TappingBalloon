@@ -67,6 +67,11 @@ public class ScrollingScript : MonoBehaviour
 	void Update ()
 	{
 		Vector3 movement = new Vector3 (speed.x * direction.x, speed.y * direction.y, 0);
+
+		// calculate the distance
+		//var longF = movement.x * 1.5f;
+		//Debug.Log(string.Format("How long: {0}", longF));
+
 		movement *= Time.deltaTime;
 		transform.Translate (movement);
 

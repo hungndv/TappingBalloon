@@ -4,14 +4,15 @@ using GoogleMobileAds;
 using GoogleMobileAds.Api;
 using System;
 
-public class GoogleMobileAdsUnityPluginScript : MonoBehaviour {
+public class GoogleMobileAdsUnityPluginScript : MonoBehaviour
+{
 
 	public BannerView bannerView;
 
-	void Awake()
+	void Awake ()
 	{
-		RequestBanner();
-		bannerView.Hide ();
+		RequestBanner ();
+		bannerView.Show ();
 	}
 
 	/*
@@ -23,9 +24,14 @@ public class GoogleMobileAdsUnityPluginScript : MonoBehaviour {
 	}
 	*/
 
+	void OnDestroy()
+	{
+		bannerView.Destroy();
+	}
+
 	#region ads
 
-	private void RequestBanner()
+	private void RequestBanner ()
 	{
 		#if UNITY_EDITOR
 		string adUnitId = "unused";
@@ -38,7 +44,7 @@ public class GoogleMobileAdsUnityPluginScript : MonoBehaviour {
 		#endif
 		
 		// Create a 320x50 banner at the top of the screen.
-		bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+		bannerView = new BannerView (adUnitId, AdSize.Banner, AdPosition.Bottom);
 		// Register for ad events.
 		bannerView.AdLoaded += HandleAdLoaded;
 		bannerView.AdFailedToLoad += HandleAdFailedToLoad;
@@ -47,52 +53,52 @@ public class GoogleMobileAdsUnityPluginScript : MonoBehaviour {
 		bannerView.AdClosed += HandleAdClosed;
 		bannerView.AdLeftApplication += HandleAdLeftApplication;
 		// Load a banner ad.
-		bannerView.LoadAd(createAdRequest());
+		bannerView.LoadAd (createAdRequest ());
 	}
 	
 	// Returns an ad request with custom ad targeting.
-	private AdRequest createAdRequest()
+	private AdRequest createAdRequest ()
 	{
-		return new AdRequest.Builder()
-			.AddTestDevice(AdRequest.TestDeviceSimulator)
-				.AddTestDevice("3E5D0101725F4CE4")
-				.AddKeyword("game")
-				.SetGender(Gender.Male)
-				.SetBirthday(new DateTime(1985, 1, 1))
-				.TagForChildDirectedTreatment(false)
-				.AddExtra("color_bg", "9B30FF")
-				.Build();
+		return new AdRequest.Builder ()
+			.AddTestDevice (AdRequest.TestDeviceSimulator)
+				.AddTestDevice ("3E5D0101725F4CE4")
+				.AddKeyword ("game")
+				.SetGender (Gender.Male)
+				.SetBirthday (new DateTime (1985, 1, 1))
+				.TagForChildDirectedTreatment (false)
+				.AddExtra ("color_bg", "9B30FF")
+				.Build ();
 		
 	}
 	
-	public void HandleAdLoaded(object sender, EventArgs args)
+	public void HandleAdLoaded (object sender, EventArgs args)
 	{
-		print("HandleAdLoaded event received.");
+		print ("HandleAdLoaded event received.");
 	}
 	
-	public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+	public void HandleAdFailedToLoad (object sender, AdFailedToLoadEventArgs args)
 	{
-		print("HandleFailedToReceiveAd event received with message: " + args.Message);
+		print ("HandleFailedToReceiveAd event received with message: " + args.Message);
 	}
 	
-	public void HandleAdOpened(object sender, EventArgs args)
+	public void HandleAdOpened (object sender, EventArgs args)
 	{
-		print("HandleAdOpened event received");
+		print ("HandleAdOpened event received");
 	}
 	
-	void HandleAdClosing(object sender, EventArgs args)
+	void HandleAdClosing (object sender, EventArgs args)
 	{
-		print("HandleAdClosing event received");
+		print ("HandleAdClosing event received");
 	}
 	
-	public void HandleAdClosed(object sender, EventArgs args)
+	public void HandleAdClosed (object sender, EventArgs args)
 	{
-		print("HandleAdClosed event received");
+		print ("HandleAdClosed event received");
 	}
 	
-	public void HandleAdLeftApplication(object sender, EventArgs args)
+	public void HandleAdLeftApplication (object sender, EventArgs args)
 	{
-		print("HandleAdLeftApplication event received");
+		print ("HandleAdLeftApplication event received");
 	}
 	
 	#endregion

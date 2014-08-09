@@ -4,19 +4,18 @@ using System.Collections;
 public class BalloonScript : MonoBehaviour
 {
 	private Animator animator;
-	private MoveScript moveScript;
 
 	// The force which is added when the player pulling
 	// This can be changed in the Inspector window
 	public Vector2 pullForce = new Vector2 (0, -1f);
 
-	public Vector3 startPosition;
-
 	void Awake ()
 	{
 		animator = GetComponent<Animator> ();
-		moveScript = GetComponent<MoveScript> ();
-		startPosition = Camera.main.transform.position;
+		Vector3 startWorldPoint = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width / 4, Screen.height / 2, transform.position.z));
+		transform.position = new Vector3 (startWorldPoint.x - renderer.bounds.size.x / 2, startWorldPoint.y, startWorldPoint.z);
+
+		//float width = gameObject.GetComponent<Mesh>().bounds.size.x * transform.localScale.x;
 	}
 
 	// Use this for initialization
@@ -76,20 +75,11 @@ public class BalloonScript : MonoBehaviour
 
 		ScoreScript.isDead = true;
 		GameObject.FindGameObjectWithTag ("GameController").AddComponent<GameOverScript> ();
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<GoogleMobileAdsUnityPluginScript> ().bannerView.Show();
 	}
 
 	private void DoSomething ()
 	{
 		//animator.enabled = false;
 		collider2D.enabled = false;
-		moveScript.enabled = false;
-	}
-
-	void OnDestroy ()
-	{
-		// Game Over.
-		// Add the script to the parent because the current game
-		// object is likely going to be destroyed immediately.
 	}
 }

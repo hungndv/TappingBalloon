@@ -10,7 +10,8 @@ public class ScoreScript : MonoBehaviour
 
 	void Awake ()
 	{
-		HighScore = score = 0;
+		//HighScore = 0; // to reset HighScore
+		score = 0;
 		isDead = false;
 		isHighScoreSet = false;
 		scoreFontSize = (int)(Screen.height / 10);
@@ -33,19 +34,13 @@ public class ScoreScript : MonoBehaviour
 		float areaHeight = scoreFontSize;
 		float areaWidth = scoreFontSize * 4;
 		float ScreenX = ((Screen.width * 0.5f) - (areaWidth * 0.5f));
-		float ScreenY = (1 * Screen.height / 15) - (scoreFontSize / 2); 
-		GUILayout.BeginArea (new Rect (ScreenX, ScreenY, areaWidth, areaHeight));
-		GUILayout.BeginHorizontal ();
-		GUILayout.FlexibleSpace ();
-		// Load and set Font
+		float ScreenY = (1 * Screen.height / 15) - (scoreFontSize / 2);
 		GUIStyle guiStyle = new GUIStyle ();
 		Font myFont = (Font)Resources.Load ("Fonts/kenvector_future", typeof(Font));
 		guiStyle.normal.textColor = Color.white;
 		guiStyle.font = myFont;
 		guiStyle.fontSize = scoreFontSize;
-		GUILayout.Label (score.ToString (), guiStyle);
-		GUILayout.FlexibleSpace ();
-		GUILayout.EndHorizontal ();
-		GUILayout.EndArea ();
+		guiStyle.alignment = TextAnchor.MiddleCenter;
+		GUI.Label (new Rect (ScreenX, ScreenY, areaWidth, areaHeight), score.ToString (), guiStyle);
 	}
 }
