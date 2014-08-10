@@ -68,6 +68,7 @@
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
      <Compile Include="Assets\Scripts\BalloonScript.cs" />
      <Compile Include="Assets\Scripts\CactusesScript.cs" />
+     <Compile Include="Assets\Scripts\CloudScript.cs" />
      <Compile Include="Assets\Scripts\DemensionConstants.cs" />
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\GenerateScript.cs" />

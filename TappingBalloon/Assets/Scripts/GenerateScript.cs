@@ -5,6 +5,8 @@ public class GenerateScript : MonoBehaviour
 {
 	public GameObject obstacle;
 	public float[] randomYs;
+	public float dalayedTime = 1.3f;
+	public float rateTime = 1.3f;
 
 	void Awake ()
 	{
@@ -15,7 +17,7 @@ public class GenerateScript : MonoBehaviour
 	{
 		// The second is the number of seconds to delay these repeated calls. 
 		// And the third parameter is the number of seconds between method calls.
-		InvokeRepeating ("CreateObstacle", 1.3f, 1.3f);
+		InvokeRepeating ("CreateObstacle", dalayedTime, rateTime);
 	}
 
 	void CreateObstacle ()

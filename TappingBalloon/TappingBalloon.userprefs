@@ -2,10 +2,26 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameOverScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameOverScript.cs" Line="78" Column="126" />
-      <File FileName="Assets\Scripts\BalloonScript.cs" Line="77" Column="87" />
-      <File FileName="Assets\Scripts\GoogleMobileAdsUnityPluginScript.cs" Line="29" Column="24" />
+      <File FileName="Assets\Scripts\GameOverScript.cs" Line="63" Column="3" />
+      <File FileName="Assets\Scripts\DemensionConstants.cs" Line="9" Column="71" />
+      <File FileName="Assets\Scripts\GoogleMobileAdsUnityPluginScript.cs" Line="28" Column="24" />
+      <File FileName="Assets\Scripts\MenuStartScript.cs" Line="43" Column="146" />
+      <File FileName="Assets\Scripts\BalloonScript.cs" Line="30" Column="149" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="GoogleMobileAds" expanded="True">
+              <Node name="Platforms" expanded="True" />
+            </Node>
+            <Node name="Scripts" expanded="True">
+              <Node name="GameOverScript.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

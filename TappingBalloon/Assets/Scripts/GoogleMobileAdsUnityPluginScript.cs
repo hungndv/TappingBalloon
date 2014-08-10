@@ -6,7 +6,6 @@ using System;
 
 public class GoogleMobileAdsUnityPluginScript : MonoBehaviour
 {
-
 	public BannerView bannerView;
 
 	void Awake ()

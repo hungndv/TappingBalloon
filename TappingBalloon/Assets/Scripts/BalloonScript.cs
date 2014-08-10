@@ -26,11 +26,8 @@ public class BalloonScript : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-	{	
-		bool clickOrTap = Input.GetButtonDown ("Fire1");
-		clickOrTap |= Input.GetKeyDown (KeyCode.DownArrow);
-		
-		if (clickOrTap) {
+	{
+		if (Input.GetButtonDown ("Fire1") || Input.GetKeyDown (KeyCode.DownArrow) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) {
 			rigidbody2D.velocity = Vector2.zero;
 			rigidbody2D.AddForce (pullForce);
 			

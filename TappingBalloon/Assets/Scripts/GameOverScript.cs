@@ -6,6 +6,15 @@ using UnityEngine;
 public class GameOverScript : MonoBehaviour
 {
 	private int scoreFontSize;
+	
+	private static Rect retryButtonRect = new Rect (Screen.width / 2 - (DemensionConstants.ButtonWidth / 2), (4.5f * Screen.height / 15) - (DemensionConstants.ButtonHeight / 2), DemensionConstants.ButtonWidth, DemensionConstants.ButtonHeight);
+	private static Texture2D facebookImage = Resources.Load ("facebook") as Texture2D;
+	private static Rect facebookShareRect = new Rect (Screen.width / 2 - DemensionConstants.ButtonWidth / 2, (7 * Screen.height / 15) - DemensionConstants.ButtonHeight / 2, DemensionConstants.ButtonWidth / 2 - DemensionConstants.Gap / 2, DemensionConstants.ButtonHeight);
+	private static Rect facebookLikeRect = new Rect (Screen.width / 2 - DemensionConstants.ButtonWidth / 2 + (DemensionConstants.ButtonWidth / 2 + DemensionConstants.Gap / 2), (7 * Screen.height / 15) - DemensionConstants.ButtonHeight / 2, DemensionConstants.ButtonWidth / 2 - DemensionConstants.Gap / 2, DemensionConstants.ButtonHeight);
+	private static Texture2D twitterImage = Resources.Load ("twitter") as Texture2D;
+	private static Rect twitterRect = new Rect (Screen.width / 2 - DemensionConstants.ButtonWidth / 2, (9.5f * Screen.height / 15) - DemensionConstants.ButtonHeight / 2, DemensionConstants.ButtonWidth, DemensionConstants.ButtonHeight);
+	private static Texture2D googlePlusImage = Resources.Load ("googleplus") as Texture2D;
+	private static Rect googlePlusRect = new Rect (Screen.width / 2 - DemensionConstants.ButtonWidth / 2, (12 * Screen.height / 15) - DemensionConstants.ButtonHeight / 2, DemensionConstants.ButtonWidth, DemensionConstants.ButtonHeight);
 
 	void Awake ()
 	{
@@ -41,72 +50,65 @@ public class GameOverScript : MonoBehaviour
 
 	void OnGUI ()
 	{
-		int buttonWidth = DemensionConstants.ButtonWidth;
-		int buttonHeight = DemensionConstants.ButtonHeight;
-
 		PrintTopScore ();
+
+		GUI.skin.button.fontSize = DemensionConstants.DefaultFontSize;
 
 		if (
 			GUI.Button (
-			// Center in X, 1/3 of the height in Y
-			new Rect (
-			Screen.width / 2 - (buttonWidth / 2),
-			(4.5f * Screen.height / 15) - (buttonHeight / 2),
-			buttonWidth,
-			buttonHeight
-		),
-			"Retry!"
-		)
-			) {
+				// Center in X, 1/3 of the height in Y
+				//new Rect (Screen.width / 2 - (buttonWidth / 2), (4.5f * Screen.height / 15) - (buttonHeight / 2), buttonWidth, buttonHeight), 
+				retryButtonRect,
+				"Retry!"))
+		{
 			// Reload the level
-			Destroy(GameObject.FindGameObjectWithTag ("GameController").GetComponent<GoogleMobileAdsUnityPluginScript> ());
+			Destroy (GameObject.FindGameObjectWithTag ("GameController").GetComponent<GoogleMobileAdsUnityPluginScript> ());
 			Application.LoadLevel ("TappingBalloon");
 		}
 
-		int facebookButtonWidth = buttonWidth;
-		int faceBookButtonHeight = 30;
+
 		if (
 			GUI.Button (
-			// Center in X, 1/3 of the height in Y
-			new Rect (Screen.width / 2 - facebookButtonWidth / 2, (7 * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth, faceBookButtonHeight),
-			"FaceBook"
-		)
+				// Center in X, 1/3 of the height in Y
+				//new Rect (Screen.width / 2 - facebookButtonWidth / 2, (7 * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth / 2 - DemensionConstants.Gap / 2, faceBookButtonHeight),
+				facebookShareRect,
+				new GUIContent ("Share", facebookImage, "Share on FaceBook."))
 			) {
-			Application.OpenURL ("https://www.facebook.com/dialog/share" +
-			                     "?app_id=" + "1647330075492824" +
-				"&display=popup" +
-			                     "&href=https%3A%2F%2Fwww.facebook.com%2Fgames%2Fhungndv%2F%3Ffbs%3D-1%26preview%3D1%26locale%3Den_US" +
-				"&redirect_uri=" + WWW.EscapeURL ("https://www.facebook.com/"));
+			Application.OpenURL ("https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&u=https%3A%2F%2Fwww.facebook.com%2Ftappingballoongame&display=popup&ref=plugin");
 
 		}
 
 		if (
 			GUI.Button (
 			// Center in X, 1/3 of the height in Y
-			new Rect (Screen.width / 2 - facebookButtonWidth / 2, (9 * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth, faceBookButtonHeight),
-			"Twitter"
-		)
+			//new Rect (Screen.width / 2 - facebookButtonWidth / 2 + (facebookButtonWidth / 2 + DemensionConstants.Gap / 2), (7 * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth / 2 - DemensionConstants.Gap / 2, faceBookButtonHeight),
+			facebookLikeRect,
+			new GUIContent ("Like", facebookImage, "Like us on FaceBook."))
 			) {
-			Application.OpenURL ("https://www.facebook.com/dialog/share" +
-			                     "?app_id=" + "1647330075492824" +
-				"&display=popup" +
-			                     "&href=https%3A%2F%2Fwww.facebook.com%2Fgames%2Fhungndv%2F%3Ffbs%3D-1%26preview%3D1%26locale%3Den_US" +
-				"&redirect_uri=" + WWW.EscapeURL ("https://www.facebook.com/"));
+			Application.OpenURL ("http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Ftappingballoongame&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=1647330075492824");
 			
 		}
 
 		if (
 			GUI.Button (
 			// Center in X, 1/3 of the height in Y
-			new Rect (Screen.width / 2 - facebookButtonWidth / 2, (11 * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth, faceBookButtonHeight),
-			"Google+"
+			//new Rect (Screen.width / 2 - facebookButtonWidth / 2, (9.5f * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth, faceBookButtonHeight),
+			twitterRect,
+			new GUIContent (twitterImage, "Share on Twitter.")
 		)
 			) {
-			Application.OpenURL ("https://www.facebook.com/dialog/share" +
-			                     "?app_id=" + "1647330075492824" +
-				"&display=popup" +
-				"&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F" +
-				"&redirect_uri=" + WWW.EscapeURL ("https://www.facebook.com/"));
+			Application.OpenURL ("https://twitter.com/home?status=https://www.facebook.com/tappingballoongame");
+		}
+
+		if (
+			GUI.Button (
+			// Center in X, 1/3 of the height in Y
+			//new Rect (Screen.width / 2 - facebookButtonWidth / 2, (12 * Screen.height / 15) - faceBookButtonHeight / 2, facebookButtonWidth, faceBookButtonHeight),
+			googlePlusRect,
+			new GUIContent (googlePlusImage, "Share on Google+.")
+		)
+			) {
+			Application.OpenURL ("https://plus.google.com/share?url=https://www.facebook.com/tappingballoongame");
 			
 		}
 	}
