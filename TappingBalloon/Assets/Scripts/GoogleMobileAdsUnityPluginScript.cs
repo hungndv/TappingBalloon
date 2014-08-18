@@ -45,12 +45,12 @@ public class GoogleMobileAdsUnityPluginScript : MonoBehaviour
 		// Create a 320x50 banner at the top of the screen.
 		bannerView = new BannerView (adUnitId, AdSize.Banner, AdPosition.Bottom);
 		// Register for ad events.
-		bannerView.AdLoaded += HandleAdLoaded;
-		bannerView.AdFailedToLoad += HandleAdFailedToLoad;
-		bannerView.AdOpened += HandleAdOpened;
-		bannerView.AdClosing += HandleAdClosing;
-		bannerView.AdClosed += HandleAdClosed;
-		bannerView.AdLeftApplication += HandleAdLeftApplication;
+		//bannerView.AdLoaded += HandleAdLoaded;
+		//bannerView.AdFailedToLoad += HandleAdFailedToLoad;
+		//bannerView.AdOpened += HandleAdOpened;
+		//bannerView.AdClosing += HandleAdClosing;
+		//bannerView.AdClosed += HandleAdClosed;
+		//bannerView.AdLeftApplication += HandleAdLeftApplication;
 		// Load a banner ad.
 		bannerView.LoadAd (createAdRequest ());
 	}
@@ -61,15 +61,15 @@ public class GoogleMobileAdsUnityPluginScript : MonoBehaviour
 		return new AdRequest.Builder ()
 			.AddTestDevice (AdRequest.TestDeviceSimulator)
 				.AddTestDevice ("3E5D0101725F4CE4")
-				.AddKeyword ("game")
-				.SetGender (Gender.Male)
-				.SetBirthday (new DateTime (1985, 1, 1))
+				.AddKeyword ("fun,beauty")
+				.SetGender (Gender.Female)
+				.SetBirthday (new DateTime(DateTime.Now.Year - 20, 1,1))
 				.TagForChildDirectedTreatment (false)
 				.AddExtra ("color_bg", "9B30FF")
 				.Build ();
 		
 	}
-	
+	/*
 	public void HandleAdLoaded (object sender, EventArgs args)
 	{
 		print ("HandleAdLoaded event received.");
@@ -99,6 +99,6 @@ public class GoogleMobileAdsUnityPluginScript : MonoBehaviour
 	{
 		print ("HandleAdLeftApplication event received");
 	}
-	
+	*/
 	#endregion
 }

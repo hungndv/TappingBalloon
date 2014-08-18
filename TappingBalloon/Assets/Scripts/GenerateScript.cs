@@ -24,7 +24,7 @@ public class GenerateScript : MonoBehaviour
 	{
 		var random = new System.Random ();
 		var randomY = randomYs [random.Next (0, randomYs.Length)];
-		var position = new Vector3 (0, randomY);
+		var position = new Vector3 (1, randomY);
 		Instantiate (obstacle, position, Quaternion.identity);
 	}
 	
