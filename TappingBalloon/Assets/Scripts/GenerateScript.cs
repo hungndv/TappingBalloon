@@ -7,6 +7,7 @@ public class GenerateScript : MonoBehaviour
 	public float[] randomYs;
 	public float dalayedTime = 1.3f;
 	public float rateTime = 1.3f;
+	//private float forTest = 2.5f;
 
 	void Awake ()
 	{
@@ -22,8 +23,10 @@ public class GenerateScript : MonoBehaviour
 
 	void CreateObstacle ()
 	{
+		//forTest = forTest == 2.5f ? -2.5f: forTest == -2.5f ? 2.5f : 0;
 		var random = new System.Random ();
 		var randomY = randomYs [random.Next (0, randomYs.Length)];
+		//randomY = forTest;
 		var position = new Vector3 (1, randomY);
 		Instantiate (obstacle, position, Quaternion.identity);
 	}
