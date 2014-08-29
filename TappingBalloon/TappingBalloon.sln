@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{74B86DBF-F2E2-5F1C-C052-0641CC9EF45A}") = "TappingBalloon", "Assembly-CSharp.csproj", "{415BB540-E77D-7B2A-E325-D561E74435D9}"
 EndProject
+Project("{74B86DBF-F2E2-5F1C-C052-0641CC9EF45A}") = "TappingBalloon", "Assembly-CSharp-Editor.csproj", "{51357021-12B9-42FC-1E3A-AD251A744D86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{415BB540-E77D-7B2A-E325-D561E74435D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{415BB540-E77D-7B2A-E325-D561E74435D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{415BB540-E77D-7B2A-E325-D561E74435D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51357021-12B9-42FC-1E3A-AD251A744D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51357021-12B9-42FC-1E3A-AD251A744D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51357021-12B9-42FC-1E3A-AD251A744D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51357021-12B9-42FC-1E3A-AD251A744D86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

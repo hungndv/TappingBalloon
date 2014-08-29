@@ -66,6 +66,42 @@
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\IOSBannerClient.cs" />
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\IOSInterstitialClient.cs" />
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\IRealTimeMultiplayerClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\ITurnBasedMultiplayerClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\Invitation.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\MatchOutcome.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\Participant.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\Player.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\RealTimeMultiplayerListener.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\Multiplayer\TurnBasedMatch.cs" />
+     <Compile Include="Assets\GooglePlayGames\BasicApi\OnStateLoadedListener.cs" />
+     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesAchievement.cs" />
+     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
+     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
+     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesScore.cs" />
+     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesUserProfile.cs" />
+     <Compile Include="Assets\GooglePlayGames\OurUtils\Logger.cs" />
+     <Compile Include="Assets\GooglePlayGames\OurUtils\Misc.cs" />
+     <Compile Include="Assets\GooglePlayGames\OurUtils\PlayGamesHelperObject.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AchievementBank.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidRtmpClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTbmpClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\GameHelperManager.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\JavaConsts.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\JavaUtil.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\NoopProxy.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\Android\OnStateResultProxy.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\iOS\IOSClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\iOS\IOSRtmpClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\iOS\MiniJSON.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
+     <Compile Include="Assets\GooglePlayGames\Platforms\iOS\iOSTbmpClient.cs" />
+     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
      <Compile Include="Assets\Scripts\BalloonScript.cs" />
      <Compile Include="Assets\Scripts\CactusesScript.cs" />
      <Compile Include="Assets\Scripts\CloudScript.cs" />
@@ -109,10 +145,14 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-uk\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rTW\common_strings.xml" />
+     <None Include="Assets\Editor\template-AndroidManifest.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fi\auth_strings.xml" />
+     <None Include="Assets\Editor\projsettings.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\version.xml" />
+     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_iap_style.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nl\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\wallet_strings.xml" />
+     <None Include="Assets\Plugins\Android\BaseGameUtils\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lo-rLA\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ru\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
@@ -135,10 +175,12 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rIN\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-af\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-de\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-lv\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\admob_ads_attrs.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-be\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sr\common_strings.xml" />
+     <None Include="Assets\Editor\template-GPGSParams.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rGB\common_strings.xml" />
@@ -168,6 +210,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nb\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sk\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt-rPT\auth_strings.xml" />
+     <None Include="Assets\Plugins\Android\BaseGameUtils\res\values\gamehelper_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mn-rMN\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ro\auth_strings.xml" />
@@ -216,6 +259,9 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hr\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-cs\auth_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt\auth_strings.xml" />
+ <Reference Include="GPGSUtils">
+ <HintPath>E:/hungndv_documents/TappingBalloonSource2/TappingBalloon/Assets/Plugins/GPGSUtils.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

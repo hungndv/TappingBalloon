@@ -35,8 +35,12 @@ public class GameOverScript : MonoBehaviour
 		// Load and set Font
 		GUIStyle guiStyle = new GUIStyle ();
 		Font myFont = (Font)Resources.Load ("Fonts/kenvector_future", typeof(Font));
-		if (ScoreScript.IsHighScoreSet) 
+		if (ScoreScript.IsHighScoreSet) {
 			guiStyle.normal.textColor = Color.yellow;
+			Social.ReportScore(ScoreScript.score, "CgkIo9bRjfsBEAIQAQ", (bool success) => {
+				// handle success or failure
+			});
+		}
 		else
 			guiStyle.normal.textColor = Color.white;
 		guiStyle.fontSize = scoreFontSize;
